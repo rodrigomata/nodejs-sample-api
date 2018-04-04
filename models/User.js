@@ -11,6 +11,7 @@ module.exports = {
 	},
 	add: (user) => {
 		const users = Utils.read();
+		user.id = Object.entries(users).length + 1;
 		users.append(user);
 		Utils.save(users);
 	},
