@@ -1,8 +1,11 @@
 const createError = require('http-errors');
 const express = require('express');
+const bodyParser = require('body-parser');
 const usersRouter = require('./routes/users');
 
 const app = express();
+
+app.use(bodyParser.json()); // for parsing application/json
 
 app.use('/users', usersRouter);
 

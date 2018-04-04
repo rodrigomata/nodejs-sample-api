@@ -12,13 +12,15 @@ module.exports = {
 	},
 
 	putUser: (req, res) => {
-		const { id, user } = req.params;
+		const { id } = req.params;
+		const { name } = req.body;
+		const user = { name };
 		User.update(user, id);
 		res.send(204);
 	},
 
 	postUser: (req, res) => {
-		const { name } = req.params;
+		const { name } = req.body;
 		const user = { name };
 		User.add(user);
 		res.send(204);
