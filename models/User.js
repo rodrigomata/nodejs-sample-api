@@ -24,8 +24,7 @@ module.exports = {
 	},
 	delete: (id) => {
 		const users = Utils.read();
-		const userToDelete = users.filter(user => user.id == id);
-		users[userToDelete] = null;
-		Utils.save(users);
+		const otherUsers = users.filter(user => user.id != id);
+		Utils.save(otherUsers);
 	}
 };
