@@ -15,7 +15,7 @@ module.exports = {
 		const { id, user } = req.params;
 		User.update(user, id);
 		res.send(204);
-	}
+	},
 
 	postUser: (req, res) => {
 		const { id, user } = req.params;
