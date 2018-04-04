@@ -7,7 +7,9 @@ module.exports = {
 		fs.writeFileSync('users.json', stringData);
 	},
 	read: () => {
-		const rawData = fs.readFileSync('users.json');
-		return JSON.parse(rawData);
+		const rawData = fs.readFileSync('users.json', 'utf8');
+		const parsedData = JSON.parse(rawData);
+		console.log(parsedData);
+		return parsedData;
 	}
 };

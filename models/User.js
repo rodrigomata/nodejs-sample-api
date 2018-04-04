@@ -3,16 +3,18 @@ const Utils = require('../helpers/Utils');
 
 module.exports = {
 	findAll: () => {
-		return Utils.read();
+		const users = Utils.read();
+		if(users) return users;
+		return 'No Users registered';
 	},
 	findOne: (id) => {
 		const users = Utils.read();
-		return users.filter(user => user.id === id);
+		return users.filter(user => user.id == id);
 	},
 	add: (user) => {
 		const users = Utils.read();
-		user.id = Object.entries(users).length + 1;
-		users.append(user);
+		user.id = users.length + 1;
+		users.push(user);
 		Utils.save(users);
 	},
 	update: (user, id) => {
@@ -22,7 +24,7 @@ module.exports = {
 	},
 	delete: (id) => {
 		const users = Utils.read();
-		const userToDelete = users.filter(user => user.id === id);
+		const userToDelete = users.filter(user => user.id == id);
 		users[userToDelete] = null;
 		Utils.save(users);
 	}

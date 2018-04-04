@@ -18,8 +18,9 @@ module.exports = {
 	},
 
 	postUser: (req, res) => {
-		const { id, user } = req.params;
-		User.add(user, id);
+		const { name } = req.params;
+		const user = { name };
+		User.add(user);
 		res.send(204);
 	},
 
