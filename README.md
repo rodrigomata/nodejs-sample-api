@@ -11,4 +11,4 @@ Simple CRUD API that manages users
 4. To run the app, run in terminal `npm start` which will execute the app on Port 3000
 
 ## Usage
-After installing and running the app, navigate to Port 3000
+After installing and running the app, navigate to `localhost:3000`
